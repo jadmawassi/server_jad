@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 
 app.get("/main", (req, res) => {
     res.status(200).json({
-        name: "nseem",
+        name: "jad",
         age: 12,
     })
 })
