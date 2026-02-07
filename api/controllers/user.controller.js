@@ -75,8 +75,35 @@ const login = async (req, res) => {
     }
 }
 
+const updateUser = async (req, res) => {
+    try {
+        const { _id, userUpdate } = req.body;
+        const NewUser = await USER_MODEL.findOneAndUpdate(
+            { _id },
+            userUpdate,
+            { new: true, runValidators: true, lean: true }
+        )
+        res.status(200).json({
+            NewUser,
+            success: !!NewUser,
+            message: "user Updated😁😁"
+
+        });
+    }
+    catch (error) {
+        res.status(500).json({
+            success: false,
+            errormessage: error.message,
+            message: 'Update Field😒😒'
+
+        });
+
+    }
+}
+
 module.exports = {
     createUser,
     login,
+    updateUser,
 };
 

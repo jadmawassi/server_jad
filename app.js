@@ -28,12 +28,13 @@ app.get("/", (req, res) => {
     })
 })
 
-app.get("/main", (req, res) => {
-    res.status(200).json({
-        name: "jad",
-        age: 12,
-    })
-})
+// app.get("/main", (req, res) => {
+//     res.status(200).json({
+//         3,
+//         name: "jad",
+//         age: 12,/
+//     })
+// })
 
 app.post("/fullname", (req, res) => {
     const { name, LastName } = req.body
